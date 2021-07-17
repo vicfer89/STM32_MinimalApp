@@ -8,8 +8,8 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
-#include "bsp.h"
 #include "types.h"
+#include "bsp.h"
 
 int main(void);
 /* Vector table */

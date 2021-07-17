@@ -1,7 +1,7 @@
-#include "bsp.h"
+#include "main.h"
 
-/* Funciones de usuario */
-void delay(uint32_t count);
+volatile uint32_t DataVar = 0xFF;
+volatile uint32_t BSSVar;
 
 int main(){
 	*RCC_AHB1ENR = 0x1; // Habilitamos el reloj en GPIOA
@@ -17,9 +17,3 @@ int main(){
 	}
 
 }
-
-void delay(uint32_t count)
-{
-	while(count--);
-}
-

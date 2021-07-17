@@ -28,4 +28,6 @@
 #define GPIOA_MODER	((uint32_t *) (GPIOA_BASE + 0x00)) // From Reference Manual
 #define GPIOA_ODR	((uint32_t *) (GPIOA_BASE + 0x14)) // From Reference Manual
 
+void delay(uint32_t count);
+
 #endif /* BSP_H_ */
