@@ -6,7 +6,7 @@ MEMORY
 	SRAM (xrw)	: ORIGIN = 0x20000000, LENGTH = 128K
 }
 
-ENTRY(main)
+ENTRY(__start)
 
 /* Secciones de salida */
 SECTIONS
@@ -22,9 +22,30 @@ SECTIONS
 	} >FLASH
 	
 	/* Datos a SRAM */
-	.data :
+	_sidata = LOADADDR(.data);
+	
+	.data : ALIGN(4)
 	{
+		. = ALIGN(4);
+		_sdata = .;
+				
 		*(.data)
-	} >SRAM
+		*(.data*)
+		
+		. = ALIGN(4);
+		_edata = .;
+	} >SRAM AT>FLASH
+	
+	/* Region para BSS */
+	.bss : ALIGN(4)
+	{
+		_sbss = .;
+		
+		*(.bss .bss*)
+		*(COMMON)
+		
+		. = ALIGN(4);
+		_ebss = .;
+	} >SRAM AT>FLASH
 
 }
