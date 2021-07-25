@@ -43,4 +43,14 @@ void __start(void)
 	for(;;); // Wait forever
 }
 
+/* Vectores de interrupción */
+__attribute__((weak)) void __NMI(void)
+{
+	asm("nop");
+}
+
+__attribute__((weak)) void __systick(void)
+{
+	asm("nop");
+}
 
