@@ -10,6 +10,7 @@
 
 #include "types.h"
 #include "bsp.h"
+#include "stm32f4xx.h"
 
 int main(void);
 
