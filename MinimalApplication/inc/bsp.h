@@ -10,6 +10,8 @@
 
 #include "types.h"
 
+void RA5_off(void);
+void RA5_on(void);
 void delay(uint32_t count);
 
 #endif /* BSP_H_ */

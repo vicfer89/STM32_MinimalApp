@@ -10,9 +10,9 @@ int main(){
 
 	while(1)
 	{
-		GPIOA.ODR = 0x20; // Activamos PA5
+		RA5_on();
 		delay(1000000);
-		GPIOA.ODR = 0x00; // Apagamos PA5
+		RA5_off();
 		delay(1000000);
 	}
 
