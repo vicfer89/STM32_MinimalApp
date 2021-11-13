@@ -7,6 +7,14 @@
 
 #include "../inc/startup.h"
 
+/**
+ * @fn void __initialize_data(uint32_t*, uint32_t*, uint32_t*)
+ * @pre
+ * @post
+ * @param flash_begin
+ * @param data_begin
+ * @param data_end
+ */
 void __initialize_data(
 		uint32_t * flash_begin,
 	    uint32_t * data_begin,
@@ -21,6 +29,13 @@ void __initialize_data(
 	}
 }
 
+/**
+ * @fn void __initialize_bss(uint32_t*, uint32_t*)
+ * @pre
+ * @post
+ * @param bss_begin
+ * @param bss_end
+ */
 void __initialize_bss(
 		uint32_t * bss_begin,
 	    uint32_t * bss_end
@@ -33,6 +48,11 @@ void __initialize_bss(
 
 }
 
+/**
+ * @fn void __start(void)
+ * @pre
+ * @post
+ */
 void __start(void)
 {
 	__initialize_data(&_sidata, &_sdata, &_edata);

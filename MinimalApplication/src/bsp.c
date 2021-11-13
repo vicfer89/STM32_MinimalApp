@@ -13,12 +13,18 @@ void RA5_off(void)
 	GPIOA.ODR = 0x00;
 }
 
+/**
+ *
+ */
 void RA5_on(void)
 {
 	GPIOA.ODR = 0x20; // Activamos PA5
 }
 
-/* Delay function */
+/**
+ *
+ * @param count
+ */
 void delay(uint32_t count)
 {
 	while(count--);

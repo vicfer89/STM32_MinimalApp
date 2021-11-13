@@ -51,4 +51,6 @@ uint32_t * vector_table[] __attribute__((section(".isr_vector"))) = {
 		(uint32_t *) __systick, //15
 };
 
+const char * const Copyright = "Mensaje de copyright";
+
 #endif /* STARTUP_H_ */

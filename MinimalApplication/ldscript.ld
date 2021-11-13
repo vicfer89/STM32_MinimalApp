@@ -16,8 +16,12 @@ SECTIONS
 	.text : ALIGN(4)
 	{
 		*(.isr_vector) /* Tabla de vectores */
-		*(.text) /* Codigo de programa */
-		/* *(.text*) /* Juntar todas las secciones .text en esta seccion */ */
+		. = ALIGN(4);
+		*(.romessage)
+		. = ALIGN(4);
+		/**(.text) /* Codigo de programa */*/
+		*(.text*) /* Juntar todas las secciones .text en esta seccion */	
+		KEEP(*(.romessage))	
 		KEEP(*(.isr_vector))
 	} >FLASH
 	
